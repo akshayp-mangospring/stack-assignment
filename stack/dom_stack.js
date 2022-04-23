@@ -27,19 +27,22 @@ function DomStack() {
         pushButton.setAttribute('disabled', 'disabled');
         return;
       }
-      const newElem = `<li class="stack-item">${valueToInsert}</li>;`
-      const newStackElem = parser.parseFromString(newElem, 'text/html').body.firstChild;
-      stackElem.appendChild(newStackElem);
-      intStack.push(parseInt(valueToInsert, 10));
-      inputElem.value = '';
+
+      if (intStack.push(parseInt(valueToInsert, 10))) {
+        const hue = Math.floor(Math.random() * 360) + 1;
+        const saturation = Math.floor(Math.random() * 250) + 1;
+        const htmlStr = `<li class="stack-item" style="background-color: hsl(${hue}deg ${saturation}% 89%);">${valueToInsert}</li>;`
+        const newStackElem = parser.parseFromString(htmlStr, 'text/html').body.firstChild;
+        stackElem.appendChild(newStackElem);
+        inputElem.value = '';
+      }
     });
 
     stackElem.addEventListener('click', (e) => {
       const clickedElem = e.target;
 
-      if (stackElem.lastChild === clickedElem) {
+      if (stackElem.lastChild === clickedElem && intStack.pop()) {
         stackElem.lastChild.remove();
-        intStack.pop();
       }
     });
   }

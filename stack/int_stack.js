@@ -12,12 +12,13 @@ IntStack.prototype.isInt = function (str) {
   return regex.test(str);
 }
 
-IntStack.prototype.push = function (item) {
-  if (this.isInt(item.toString())) {
-    this.items.push(item);
+IntStack.prototype.push = function (i) {
+  if (this.isInt(i.toString())) {
+    this.items.push(i);
+    return i;
   } else {
     console.error(
-      `Invalid item: ${item} entered. This stack accepts integers only`
+      `Invalid item: ${i} entered. This stack accepts integers only`
     );
   }
 }

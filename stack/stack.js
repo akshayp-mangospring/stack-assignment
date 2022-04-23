@@ -4,10 +4,11 @@ function Stack() {
 
 Stack.prototype.push = function (i) {
   this.items.push(i);
+  return i;
 };
 
 Stack.prototype.pop = function () {
-  this.items.pop();
+  return this.items.pop();
 };
 
 export default Stack;
