@@ -1,0 +1,16 @@
+{
+  "name": "stack-assignment",
+  "version": "1.0.0",
+  "description": "This is a basic assignment of a stack which accepts integers",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.9.5"
+  },
+  "author": "Akshay Pawar",
+  "license": "MIT"
+}
