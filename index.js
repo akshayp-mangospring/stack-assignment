@@ -1,3 +1,3 @@
-import DomStack from './stack/dom_stack';
+import DomStack from './modules/stack/dom_stack';
 
 DomStack();
